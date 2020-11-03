@@ -44,12 +44,15 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [Java](https://docs.oracle.com/en/java/)
 - [Quarkus](https://quarkus.io/) 
 - [Docker](https://docs.docker.com)
-- [Postgresql](https://www.postgresql.org/docs/)
+- [H2 Database Engine](https://www.h2database.com/html/main.html)
+- [Projeto I'm A Dev](https://gitlab.com/igorgabrielg/im-a-dev)
 
 ## :rocket: Ferramentas
 
-- [insomnia](https://insomnia.rest/download/)
+- [insomnia](https://insomnia.rest/download/) (Arquivo para teste de rotas disponibilizados)
 
+<br>
+<img src="git/img/insominia.gif" width="720px" >
 
 ## Compilar
 

@@ -44,8 +44,11 @@ public class UserServiceImpl implements UserService {
 	@Transactional
 	public User atualiza(long id, UserForm userForm) {
 		User user = porId(id);		
-		user.setApelido(userForm.getApelido());
-		user.setGithub(userForm.getGithub());
+		user.setUsuario(userForm.getUsuario());
+		user.setEmail(userForm.getEmail());
+		user.setNome(userForm.getNome());
+		user.setSobrenome(userForm.getSobrenome());
+		user.setTecnologias(userForm.getTecnologias());
 		return user;
 	}
 

@@ -17,27 +17,27 @@ import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import br.com.mcos.crud.model.Encontro;
-import br.com.mcos.crud.rest.form.EncontroForm;
-import br.com.mcos.crud.service.EncontroService;
+import br.com.mcos.crud.model.Vaga;
+import br.com.mcos.crud.rest.form.VagaForm;
+import br.com.mcos.crud.service.VagaService;
 
-@Path("/encontro")
+@Path("/vaga")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-public class EncontroResource {
+public class VagaResource {
 
 	@Inject
-	EncontroService encontroService;
+	VagaService vagaService;
 
 	@GET
-	public List<Encontro> lista() {
-		return encontroService.lista();
+	public List<Vaga> lista() {
+		return vagaService.lista();
 	}
 	
 	@POST
 	@Transactional
-	public Response cria(Encontro encontro) {
-		long id = encontroService.cria(encontro);
+	public Response cria(Vaga vaga) {
+		long id = vagaService.cria(vaga);
 		URI uri = URI.create("http://localhost:8080/" + id);
 		return Response.created(uri).build();
 	}
@@ -45,26 +45,26 @@ public class EncontroResource {
 	@PUT
 	@Path("{id}")
 	@Transactional
-	public Response atualiza(@PathParam("id") long id, EncontroForm encontroForm) {		
-		Encontro encontro = encontroService.atualiza(id, encontroForm);			
-		URI uri = URI.create("http://localhost:8080/" + encontro.getId());
+	public Response atualiza(@PathParam("id") long id, VagaForm vagaForm) {
+		Vaga vaga = vagaService.atualiza(id, vagaForm);
+		URI uri = URI.create("http://localhost:8080/" + vaga.getId());
 		return Response.created(uri).build();		
 	}
 	
 	@GET
 	@Path("{id}")
-	public Encontro porId(@PathParam("id") long id) {
-		return encontroService.porId(id);
+	public Vaga porId(@PathParam("id") long id) {
+		return vagaService.porId(id);
 	}
 	
 	@DELETE
 	@Path("{id}")
 	@Transactional
 	public void apaga(@PathParam("id") long id) {
-		Encontro encontro = encontroService.porId(id);
-		if(encontro == null) {
+		Vaga vaga = vagaService.porId(id);
+		if(vaga == null) {
 			throw new WebApplicationException(404);
 		}
-		encontroService.apaga(id);
+		vagaService.apaga(id);
 	}
 }

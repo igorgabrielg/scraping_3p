@@ -22,6 +22,7 @@ public class UsersResource {
 
 	@GET
 	public List<User> lista() {
+		System.out.println(userService.lista());
 		return userService.lista();
 	}
 	

@@ -1,30 +1,32 @@
 package br.com.mcos.crud.rest.form;
 
 public class UserForm {
-	
-	private String apelido;
-	private String github;
 
-	public String getApelido() {
-		return apelido;
-	}
+	private String usuario;
+	private String email;
+	private String nome;
+	private String sobrenome;
+	private String tecnologias;
 
-	public String getGithub() {
-		return apelido;
-	}
+	public String getUsuario() {	return usuario;	}
+	public String getEmail() { return email; }
+	public String getNome() { return nome; }
+	public String getSobrenome() { return sobrenome; }
+	public String getTecnologias() { return tecnologias; }
 
-	public void setApelido(String apelido) {
-		this.apelido = apelido;
-	}
+	public void setUsuario(String usuario) { this.usuario = usuario; }
+	public void setEmail(String email) { this.email = email; }
+	public void setNome(String nome) { this.nome = nome; }
+	public void setSobrenome(String sobrenome) { this.sobrenome = sobrenome; }
+	public void setTecnologias(String tecnologias) { this.tecnologias = tecnologias; }
 
-	public void setGithub(String apelido) {
-		this.apelido = apelido;
-	}
-
-	public UserForm(String apelido, String github) {
+	public UserForm(String usuario, String email, String nome, String sobrenome, String tecnologias) {
 		super();
-		this.apelido = apelido;
-		this.github = github;
+		this.usuario = usuario;
+		this.email = email;
+		this.nome = nome;
+		this.sobrenome = sobrenome;
+		this.tecnologias = tecnologias;
 	}
 
 	public UserForm() {
@@ -33,7 +35,12 @@ public class UserForm {
 
 	@Override
 	public String toString() {
-		return "UserForm [github=" + github + ", apelido=" + apelido + "]";
+		return "User [" +
+				" usuario=" + usuario + "," +
+				" email=" + email + "," +
+				" nome=" + nome + "," +
+				" sobrenome=" + sobrenome + "," +
+				" tecnologias=" + tecnologias + "]";
 	}
 
 }

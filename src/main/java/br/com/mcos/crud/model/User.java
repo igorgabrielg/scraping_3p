@@ -10,9 +10,11 @@ public class User {
 	@Id
 	@GeneratedValue
 	private long id;
-
-	private String apelido;
-	private String github;
+	private String usuario;
+	private String email;
+	private String nome;
+	private String sobrenome;
+	private String tecnologias;
 
 	public User() {
 	}	
@@ -25,24 +27,34 @@ public class User {
 		this.id = id;
 	}
 
-	public User(String apelido, String github) {
-		this.github = github;
-		this.apelido = apelido;
+	public User(String usuario, String email, String nome, String sobrenome, String tecnologias) {
+		this.usuario = usuario;
+		this.email = email;
+		this.nome = nome;
+		this.sobrenome = sobrenome;
+		this.tecnologias = tecnologias;
 	}
 
-	public String getGithub() {	return github;	}
+	public String getUsuario() {	return usuario;	}
+	public String getEmail() { return email; }
+	public String getNome() { return nome; }
+	public String getSobrenome() { return sobrenome; }
+	public String getTecnologias() { return tecnologias; }
 
-	public String getApelido() { return apelido; }
-
-	public void setGithub(String github) {
-		this.github = github;
-	}
-	
-	public void setApelido(String apelido) {	this.apelido = apelido;	}
+	public void setUsuario(String usuario) { this.usuario = usuario; }
+	public void setEmail(String email) { this.email = email; }
+	public void setNome(String nome) { this.nome = nome; }
+	public void setSobrenome(String sobrenome) { this.sobrenome = sobrenome; }
+	public void setTecnologias(String tecnologias) { this.tecnologias = tecnologias; }
 
 	@Override
 	public String toString() {
-		return "User [github=" + github + ", apelido=" + apelido + "]";
+		return "User [" +
+				" usuario=" + usuario + "," +
+				" email=" + email + "," +
+				" nome=" + nome + "," +
+				" sobrenome=" + sobrenome + "," +
+				" tecnologias=" + tecnologias + "]";
 	}
 
 }
